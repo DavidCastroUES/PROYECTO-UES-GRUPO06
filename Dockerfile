@@ -18,14 +18,6 @@ COPY . .
 
 RUN composer install --no-interaction --no-scripts --prefer-dist -vvv
 
-RUN php artisan migrate
-
-
-COPY entrypoint.sh /usr/local/bin/entrypoint.sh
-RUN chmod +x /usr/local/bin/entrypoint.sh
-
 EXPOSE 8080
-ENTRYPOINT ["entrypoint.sh"]
 
-# CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
-
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
