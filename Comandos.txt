@@ -1,0 +1,71 @@
+***********Crear el Instalador del comando Laravel********** 
+composer global require laravel/installer
+
+***********Clonar un Repositorio*************
+git clone https://github.com/LeoSerpas/SM08031_Sprint3_DSI2.git
+
+**********Crear Nueva Key para Proyecto*******
+php artisan key:generate
+
+**************Crear Nuevo Proyecto***************
+laravel new nombre_proyecto
+
+************Para Sublime Text**********
+Ctrl -> p install
+Material theme
+toogle_side_bar
+Larabel Blade
+
+*******Crear migraciones********
+php artisan make:migration create_messages_table --create
+php artisan migrate
+*** make:migration add_phone_to_messages_table --table ** para modificar tabla
+$table->string('phone')->nullable(); *** en Schema de up()
+$table->drowColumn('phone'); *** en Schema de down()
+php artisan migrate:rollback *** quita migracion en consola
+
+*******Controllers************
+php artisan make:controller MessagesController --resource
+
+***** Todos los recursos modelos y controler***
+
+php artisan make:model --migration --controller test --resource
+
+Route::get('/', 'App\Http\Controllers\RegistrationController@create');
+
+
+.env
+APP_NAME=Laravel
+APP_ENV=local
+APP_KEY=base64:bAwCWvxBhmPKoc9NNFbV+2aYcwShP1v4NX1qY+GF9TI=
+APP_DEBUG=true
+APP_LOG_LEVEL=debug
+APP_URL=http://localhost
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=centroescolar
+DB_USERNAME=root
+DB_PASSWORD=
+
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+SESSION_DRIVER=file
+QUEUE_DRIVER=sync
+
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+
+MAIL_DRIVER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+
