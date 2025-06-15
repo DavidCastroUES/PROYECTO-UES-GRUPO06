@@ -1,0 +1,7 @@
+[phases.setup]
+nixPkgs = ['php71', 'php71Packages.composer']
+
+[phases.install]
+cmds = [
+  "composer install --ignore-platform-reqs --no-interaction"
+]
